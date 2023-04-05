@@ -27,10 +27,10 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name: my-artifact
-        path: bin/output/logs/harness.log
+        path: bin/output/logs/
     - name: Display structure of downloaded files
       run: ls -R
-      working-directory: bin/output/logs/harness.log
+      working-directory: bin/output/logs/
       
 #     upload artifact
     - uses: actions/upload-artifact@v3
