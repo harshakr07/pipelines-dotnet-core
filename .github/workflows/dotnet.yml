@@ -20,9 +20,15 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+    - uses: actions/upload-artifact@v3
+      with:
+        name: harness-build-log
+        path: bin/output/logs/harness.log
+
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: ${{secrets.BUILD}}
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    
