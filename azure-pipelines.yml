@@ -15,3 +15,14 @@ strategy:
 
 pool:
   vmImage: $(imageName)
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo Write your commands here
+      
+      echo Hello world
