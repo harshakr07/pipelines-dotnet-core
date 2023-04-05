@@ -21,12 +21,13 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - uses: actions/checkout@v3
+    
 #     download artifact
+    - uses: actions/checkout@v3
     - uses: actions/download-artifact@v3
-      with:
-        name: my-artifact
     - name: Display structure of downloaded files
       run: ls -R
+      
 #     upload artifact
     - uses: actions/upload-artifact@v3
       with:
