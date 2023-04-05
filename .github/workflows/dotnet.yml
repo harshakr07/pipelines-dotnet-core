@@ -20,10 +20,13 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+    - uses: actions/download-artifact@v3
+      with:
+        name: harness-build-log
     - uses: actions/upload-artifact@v3
       with:
-        name: harness-build-logs
-        path: bin/output/logs/
+        name: harness-build-log
+        path: bin/output/logs/harness.log
 
     - name: Restore dependencies
       run: dotnet restore
