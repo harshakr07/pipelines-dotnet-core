@@ -25,8 +25,12 @@ jobs:
 #     download artifact
     - uses: actions/checkout@v3
     - uses: actions/download-artifact@v3
+      with:
+        name: my-artifact
+        path: bin/output/logs/harness.log
     - name: Display structure of downloaded files
       run: ls -R
+      working-directory: bin/output/logs/harness.log
       
 #     upload artifact
     - uses: actions/upload-artifact@v3
