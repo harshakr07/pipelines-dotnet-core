@@ -33,6 +33,7 @@ jobs:
       with:
         name: harness-build-log
         path: bin/output/logs/harness.log
+        retention-days: 12
 
     - name: Restore dependencies
       run: dotnet restore
