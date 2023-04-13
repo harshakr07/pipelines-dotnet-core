@@ -26,3 +26,13 @@ steps:
       echo Write your commands here
       
       echo Hello world
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'Dot-netcore-Sonarqube'
+    scannerMode: 'MSBuild'
+    projectKey: 'dotNET-Core-pipeline_dotNET-Core-pipeline_AYd525msXvI1t5dqWrMn'
+    projectName: 'dotNetCore-sonarqube'
+- task: SonarQubeAnalyze@5
+- task: SonarQubePublish@5
+  inputs:
+    pollingTimeoutSec: '300'
